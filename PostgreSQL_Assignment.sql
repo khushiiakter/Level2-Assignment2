@@ -59,3 +59,13 @@ SELECT  count(*) AS unique_species_count FROM (SELECT species_id FROM sightings 
 -- problem 3
 SELECT * FROM sightings 
     WHERE location LIKE '%Pass%';
+
+--problem 4
+
+-- SELECT b.title, b.author_name, p.name AS publisher
+-- FROM books b
+--     CROSS JOIN publishers p;
+
+SELECT r.name , s.ranger_id As total_sightings FROM rangers r JOIN sightings s WHERE r. ranger_id = s.ranger_id;
+
+
