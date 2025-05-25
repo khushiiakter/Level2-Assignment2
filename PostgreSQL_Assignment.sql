@@ -62,10 +62,6 @@ SELECT * FROM sightings
 
 --problem 4
 
--- SELECT b.title, b.author_name, p.name AS publisher
--- FROM books b
---     CROSS JOIN publishers p;
-
-SELECT r.name , s.ranger_id As total_sightings FROM rangers r JOIN sightings s WHERE r. ranger_id = s.ranger_id;
+SELECT r.name , COUNT(s.sighting_id) As total_sightings FROM rangers r JOIN sightings s ON r. ranger_id = s.ranger_id GROUP BY r.name;
 
 
