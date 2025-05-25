@@ -72,4 +72,4 @@ SELECT r.name , COUNT(s.sighting_id) As total_sightings FROM rangers r JOIN sigh
 --  problem 6
 SELECT sp.common_name, si.sighting_time, r.name FROM species sp 
     JOIN sightings si ON sp.species_id = si.species_id
-    JOIN rangers r ON si.ranger_id = r.ranger_id;
+    JOIN rangers r ON si.ranger_id = r.ranger_id ORDER BY si.sighting_time DESC LIMIT 2;
