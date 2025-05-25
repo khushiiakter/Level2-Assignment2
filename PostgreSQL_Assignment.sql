@@ -73,3 +73,7 @@ SELECT r.name , COUNT(s.sighting_id) As total_sightings FROM rangers r JOIN sigh
 SELECT sp.common_name, si.sighting_time, r.name FROM species sp 
     JOIN sightings si ON sp.species_id = si.species_id
     JOIN rangers r ON si.ranger_id = r.ranger_id ORDER BY si.sighting_time DESC LIMIT 2;
+
+-- problem 7
+
+UPDATE species SET conservation_status ='Historic' WHERE (SELECT extract(YEAR FROM discovery_date) < '1800');
